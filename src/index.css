@@ -24,4 +24,8 @@
   .underlined-word {
     @apply relative before:absolute before:bottom-[calc(0.285em*-0.625)] before:left-0 before:right-0 before:h-[0.285em] before:bg-[url("./assets/underline.svg")];
   }
+
+  .sec-text {
+    @apply text-gray-500 dark:text-gray-400;
+  }
 }

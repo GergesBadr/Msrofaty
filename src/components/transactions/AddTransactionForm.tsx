@@ -36,7 +36,7 @@ export default function AddTransactionForm() {
             {...register("type", { required: "حدّد نوع المعاملة." })}
             aria-describedby="type-error"
             aria-invalid={errors.type ? true : false}
-            className="rounded-xl border-2 px-4 py-1"
+            className="rounded-xl border-2 dark:border-gray-700 dark:bg-primary-dark px-4 py-1"
           >
             <option value="">اختر النوع:</option>
             <option value="expense">مصروفات</option>
@@ -56,7 +56,7 @@ export default function AddTransactionForm() {
             {...register("category", { required: "حدّد تصنيف المعاملة." })}
             aria-describedby="category-error"
             aria-invalid={errors.category ? true : false}
-            className="rounded-xl border-2 px-4 py-1"
+            className="rounded-xl border-2 dark:border-gray-700 dark:bg-primary-dark px-4 py-1"
           >
             <option value="">اختر التصنيف:</option>
             <option value="TRANSPORTATION">مواصلات</option>
@@ -88,7 +88,7 @@ export default function AddTransactionForm() {
             aria-describedby="amount-error"
             aria-invalid={errors.amount ? true : false}
             placeholder="مثال: 400"
-            className="rounded-xl border-2 px-4 py-1"
+            className="rounded-xl border-2 dark:border-gray-700 dark:bg-primary-dark px-4 py-1"
           />
         </FormElement>
 
@@ -107,7 +107,7 @@ export default function AddTransactionForm() {
             placeholder="مثال: شراء وجبة عشاء."
             aria-describedby="description-error"
             aria-invalid={errors.description ? true : false}
-            className="rounded-xl border-2 px-4 py-1"
+            className="rounded-xl border-2 dark:border-gray-700 dark:bg-primary-dark px-4 py-1"
           />
         </FormElement>
 
@@ -126,7 +126,7 @@ export default function AddTransactionForm() {
             {...register("date", {
               required: "حدّد تاريخ المعاملة.",
             })}
-            className="rounded-xl border-2 px-4 py-1"
+            className="rounded-xl border-2 dark:border-gray-700 dark:bg-primary-dark px-4 py-1"
           />
         </FormElement>
 

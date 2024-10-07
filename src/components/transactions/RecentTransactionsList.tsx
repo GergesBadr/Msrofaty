@@ -13,11 +13,11 @@ export default function RecentTransactionsList() {
   return (
     <OpacityIn
       index={1}
-      style="h-[475px] overflow-y-auto rounded-xl bg-white px-6 py-4"
+      style="duration-200 rounded-xl bg-white dark:bg-secondary-dark px-6 py-4"
     >
       <div className="mb-6">
         <h3 className="heading-3">المعاملات السابقة:</h3>
-        <p className="text-base text-gray-500">(آخر 7 معاملات)</p>
+        <p className="text-base sec-text">(آخر 7 معاملات)</p>
       </div>
 
       {lastSevenTransactions.length < 1 && <EmptyTransactions />}

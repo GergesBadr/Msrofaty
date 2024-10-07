@@ -5,12 +5,12 @@ export default function EmptyExpenses() {
     <div>
       <img
         src={statistic}
-        width="450"
-        height="450"
+        width="224"
+        height="224"
         alt="Illustration of statistics."
         className="mx-auto size-56"
       />
-      <p className="mt-10 text-center text-gray-500">
+      <p className="sec-text mt-10 text-center">
         ضيف مصروفات جديدة، والإحصائيات هتظهرلك هنا!
       </p>
     </div>

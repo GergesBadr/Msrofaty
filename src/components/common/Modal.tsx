@@ -92,7 +92,7 @@ function Window({ children, id, a11yName }: WindowProps) {
             role="dialog"
             aria-label={a11yName}
             id="modal-window"
-            className="relative max-h-[90%] w-[clamp(50%,900px,100%)] overflow-y-auto rounded-lg bg-white px-7 pb-7 pt-14 shadow-md lg:px-10 lg:pb-10"
+            className="dark:bg-secondary-dark shadow-lg relative max-h-[90%] w-[clamp(50%,900px,100%)] overflow-y-auto rounded-lg bg-white px-7 pb-7 pt-14 lg:px-10 lg:pb-10"
             // Animations
             variants={variants}
             initial="hidden"
@@ -103,7 +103,7 @@ function Window({ children, id, a11yName }: WindowProps) {
             <button
               aria-label="Close modal"
               onClick={closeModal}
-              className="absolute right-4 top-4 rounded-lg p-1 duration-200 hover:bg-indigo-200"
+              className="absolute right-4 top-4 rounded-lg p-1 duration-200 hover:bg-indigo-200 dark:hover:bg-gray-700"
             >
               <HiOutlineXMark className="size-7" />
             </button>

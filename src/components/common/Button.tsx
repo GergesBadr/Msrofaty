@@ -5,7 +5,6 @@ interface Props {
   disabled?: boolean;
   onClick?: () => void;
   extraClasses?: string;
-  
 }
 
 export default function Button({

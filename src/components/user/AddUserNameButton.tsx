@@ -5,7 +5,7 @@ export default function AddUserNameButton() {
   return (
     <Modal>
       <Modal.Open widthIsFit={true} id="add-username-modal">
-        <button className="font-medium text-indigo-600 underline underline-offset-4 hover:no-underline">
+        <button className="font-medium text-indigo-600 dark:text-indigo-400 underline underline-offset-4 hover:no-underline">
           تعديل الإسم
         </button>
       </Modal.Open>

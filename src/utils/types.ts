@@ -23,6 +23,7 @@ export interface Transaction {
 // User
 export interface User {
   name: string;
+  theme: "light" | "dark";
 }
 
 // Duration

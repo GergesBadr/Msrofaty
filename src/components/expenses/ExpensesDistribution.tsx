@@ -51,7 +51,7 @@ export default function ExpensesDistribution() {
   return (
     <OpacityIn
       index={2}
-      style="h-[475px] overflow-y-auto rounded-xl bg-white px-6 py-4"
+      style="rounded-xl duration-200 bg-white dark:bg-secondary-dark px-6 py-4"
     >
       <h3 className="heading-3 mb-4"> توزيع المصروفات:</h3>
 

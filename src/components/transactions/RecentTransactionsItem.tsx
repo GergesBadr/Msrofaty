@@ -19,7 +19,7 @@ interface Props {
 
 export default function RecentTransactionsItem({ item }: Props) {
   return (
-    <li className="flex justify-between gap-4 [&:not(:first-child)]:pt-4 [&:not(:last-child)]:border-b-2 [&:not(:last-child)]:pb-4">
+    <li className="flex justify-between gap-4 dark:border-b-gray-700 [&:not(:first-child)]:pt-4 [&:not(:last-child)]:border-b-2 [&:not(:last-child)]:pb-4">
       {/* Icon, name and description */}
       <div className="flex items-center gap-3">
         {item.category === "TRANSPORTATION" && <TransportationIcon />}
@@ -34,7 +34,7 @@ export default function RecentTransactionsItem({ item }: Props) {
           <p className="font-bold">
             {translateCategoryIntoArabic(item.category)}
           </p>
-          <p className="text-lg text-gray-500"> {item.description} </p>
+          <p className="sec-text text-lg"> {item.description} </p>
         </div>
       </div>
 
@@ -50,7 +50,7 @@ export default function RecentTransactionsItem({ item }: Props) {
             - {formatCurrency(item.amount)}
           </p>
         )}
-        <p className="text-lg text-gray-500"> {formatDate(item.date)} </p>
+        <p className="sec-text text-lg"> {formatDate(item.date)} </p>
       </div>
     </li>
   );

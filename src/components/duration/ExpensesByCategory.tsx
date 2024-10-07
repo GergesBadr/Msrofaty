@@ -19,12 +19,19 @@ interface Props {
 
 export default function ExpensesByCategory({ filteredTransactions }: Props) {
   const expensesByCategory = getExpensesByCategory(filteredTransactions);
+
+  const sortedExpenses = Object.entries(expensesByCategory).sort(
+    ([, firstAmount], [, secondAmount]) => secondAmount - firstAmount,
+  );
+
   return (
     <div>
-      {Object.entries(expensesByCategory).map(([category, amount]) => (
+      <p className="text-center text-2xl">المصروفات حسب الفئات:</p>
+
+      {sortedExpenses.map(([category, amount]) => (
         <div
           key={category}
-          className="flex items-center justify-between gap-4 border-b-2 py-6 first:pt-0 last:border-b-0 last:pb-0"
+          className="flex items-center justify-between gap-4 border-b-2 py-6 first:pt-0 dark:border-b-gray-700"
         >
           {/* Icon */}
           {category === "TRANSPORTATION" && <TransportationIcon />}
@@ -39,7 +46,7 @@ export default function ExpensesByCategory({ filteredTransactions }: Props) {
           {/* Name and amount */}
           <div className="space-y-1 text-left">
             <p className="font-bold">{translateCategoryIntoArabic(category)}</p>
-            <p className="text-gray-500">{formatCurrency(amount)}</p>
+            <p className="sec-text">{formatCurrency(amount)}</p>
           </div>
         </div>
       ))}

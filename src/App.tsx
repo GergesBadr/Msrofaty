@@ -4,6 +4,7 @@ import Overview from "./components/layout/Overview";
 import Summary from "./components/layout/Summary";
 import Duration from "./components/layout/Duration";
 import TransactionsHistoryTable from "./components/table/TransactionsHistoryTable";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
@@ -12,12 +13,16 @@ function App() {
         <Header />
       </header>
 
-      <main className="mb-16 space-y-16">
+      <main className="space-y-16">
         <Overview />
         <Summary />
         <Duration />
         <TransactionsHistoryTable />
       </main>
+
+      <footer className="bg-indigo-100 dark:bg-secondary-dark">
+        <Footer />
+      </footer>
 
       {/* Notification toaster setup */}
       <Toaster

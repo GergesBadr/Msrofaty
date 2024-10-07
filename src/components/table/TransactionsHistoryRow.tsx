@@ -6,7 +6,9 @@ import {
 } from "../../utils/helpers";
 import { Transaction } from "../../utils/types";
 import Modal from "../common/Modal";
-import ConfirmTransactionDelete from "./ConfirmTransactionDelete";
+import ConfirmDelete from "../common/ConfirmDelete";
+import { useAppDispatch } from "../../app/hooks";
+import { deleteTransaction } from "../../app/features/transactionsSlice";
 
 interface Props {
   item: Transaction;
@@ -14,15 +16,17 @@ interface Props {
 }
 
 export default function TransactionsHistoryRow({ item, index }: Props) {
+  const dispatch = useAppDispatch();
+
   return (
-    <tr className="border-b-2 duration-200 hover:bg-indigo-50 [&>td]:p-5">
+    <tr className="border-b-2 duration-200 hover:bg-indigo-50 dark:border-b-gray-700 dark:hover:bg-secondary-dark [&>td]:p-5">
       <td>{index + 1}&#41;</td>
 
       <td className="font-semibold">
         {translateCategoryIntoArabic(item.category)}
       </td>
 
-      <td className="text-gray-500">
+      <td className="sec-text">
         {item.description ? (
           <span>{item.description}</span>
         ) : (
@@ -32,7 +36,7 @@ export default function TransactionsHistoryRow({ item, index }: Props) {
 
       <td>
         <span
-          className={`text-md mx-auto block w-fit rounded-lg px-3 py-1 text-center ${item.type === "expense" ? "bg-red-200" : "bg-green-200"}`}
+          className={`text-md mx-auto block w-fit rounded-lg px-3 py-1 text-center ${item.type === "expense" ? "bg-red-200 dark:bg-red-800" : "bg-green-200 dark:bg-green-800"}`}
         >
           {item.type === "expense" && "مصروف"}
           {item.type === "income" && "دخل"}
@@ -49,17 +53,19 @@ export default function TransactionsHistoryRow({ item, index }: Props) {
             <button
               aria-label="Delete This Transaction"
               title="Delete This Transaction"
-              className="rounded-full bg-red-500 p-3 text-white"
+              className="rounded-full bg-red-800 p-3 text-white"
             >
               <HiTrash />
             </button>
           </Modal.Open>
 
           <Modal.Window
-            a11yName="delete-transaction-modal"
+            a11yName="Delete Transaction Modal"
             id="delete-transaction-modal"
           >
-            <ConfirmTransactionDelete transactionId={item.id} />
+            <ConfirmDelete action={() => dispatch(deleteTransaction(item.id))}>
+              متأكد إنك عاوز تحذف المعاملة دي؟
+            </ConfirmDelete>
           </Modal.Window>
         </Modal>
       </td>

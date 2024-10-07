@@ -35,7 +35,7 @@ export default function AddUserNameForm() {
             id="name"
             aria-describedby="name-error"
             aria-invalid={errors.name ? true : false}
-            className="rounded-xl border-2 px-4 py-1"
+            className="dark:bg-secondary-dark rounded-xl border-2 px-4 py-1 dark:border-gray-700"
             placeholder="اكتب الإسم هنا"
             {...register("name", { required: "عرّفنا بنفسك الأول." })}
           />

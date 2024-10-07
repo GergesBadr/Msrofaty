@@ -18,7 +18,7 @@ export default function FormElement({
   describedBy,
 }: Props) {
   return (
-    <div className="grid grid-cols-1 items-center gap-3 border-b-2 py-5 first:pt-0 md:grid-cols-3 md:gap-6 [&>:nth-child(2)]:sm:w-[65%] [&>:nth-child(2)]:md:w-full">
+    <div className="grid grid-cols-1 items-center gap-3 dark:border-b-gray-700 border-b-2 py-5 first:pt-0 md:grid-cols-3 md:gap-6 [&>:nth-child(2)]:sm:w-[65%] [&>:nth-child(2)]:md:w-full">
       <label htmlFor={htmlFor} className="font-medium">
         {isRequired && <span className="text-red-400">* </span>}
         {label}

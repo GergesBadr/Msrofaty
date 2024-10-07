@@ -43,10 +43,44 @@ export const transactionsSlice = createSlice({
       // 3. Notification
       toast.success("تم حذف المعاملة بنجاح.");
     },
+
+    deleteAllTransactions: (state) => {
+      state.transactionsList = [];
+      localStorage.setItem(
+        "transactions",
+        JSON.stringify(state.transactionsList),
+      );
+      toast.success("تم حذف جميع المعاملات بنجاح.");
+    },
+
+    deleteSpecificTransactions: (
+      state,
+      action: PayloadAction<Transaction[]>,
+    ) => {
+      const transactionsToBeDeleted = action.payload;
+      // 1. Filter out transactions that are not in the array of transactions to delete
+      const newList = state.transactionsList.filter(
+        (transaction) =>
+          !transactionsToBeDeleted.some((t) => t.id === transaction.id),
+      );
+      state.transactionsList = newList;
+      // 2. Update local storage
+      localStorage.setItem(
+        "transactions",
+        JSON.stringify(state.transactionsList),
+      );
+      // 3. Notification
+      toast.success("تم حذف معاملات المدة المُحددة بنجاح..");
+    },
   },
 });
 
-export const { addTransaction, deleteTransaction } = transactionsSlice.actions;
+export const {
+  addTransaction,
+  deleteTransaction,
+  deleteAllTransactions,
+  deleteSpecificTransactions,
+} = transactionsSlice.actions;
 
 // Calculate income
 export const getTotalIncome = (transactions: Transaction[]): number => {

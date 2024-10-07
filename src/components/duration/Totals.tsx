@@ -23,7 +23,7 @@ export default function Totals({ filteredTransactions }: Props) {
     <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:gap-8 [&>div]:w-full">
       <OpacityIn
         index={3}
-        style="flex items-center gap-6 rounded-xl bg-indigo-50 px-6 py-4"
+        style="flex items-center gap-6 rounded-xl bg-indigo-50 dark:bg-gray-800 px-6 py-4"
       >
         <BalanceIcon />
         <div>
@@ -34,7 +34,7 @@ export default function Totals({ filteredTransactions }: Props) {
 
       <OpacityIn
         index={4}
-        style="flex items-center gap-6 rounded-xl bg-indigo-50 px-6 py-4"
+        style="flex items-center gap-6 rounded-xl bg-indigo-50 dark:bg-gray-800 px-6 py-4"
       >
         <IncomeIcon />
         <div>
@@ -45,7 +45,7 @@ export default function Totals({ filteredTransactions }: Props) {
 
       <OpacityIn
         index={5}
-        style="flex items-center gap-6 rounded-xl bg-indigo-50 px-6 py-4"
+        style="flex items-center gap-6 rounded-xl bg-indigo-50 dark:bg-gray-800 px-6 py-4"
       >
         <ExpenseIcon />
         <div>

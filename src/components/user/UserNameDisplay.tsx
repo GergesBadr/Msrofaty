@@ -2,7 +2,7 @@ import { PiHandWaving } from "react-icons/pi";
 import { useAppSelector } from "../../app/hooks";
 
 export default function UserNameDisplay() {
-  const userName = useAppSelector((state) => state.user.user.name);
+  const userName = useAppSelector((state) => state.user.userInfo.name);
 
   return (
     <h2 className="heading-2 flex items-center gap-2">
